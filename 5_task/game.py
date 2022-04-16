@@ -61,18 +61,29 @@ class Room():
         """
         return self.roomsdict[command]
 
-
-    
-        
-class Enemy:
-    """class for an enemy"""
-    defeats = 0
+class Character:
     def __init__(self, name, description):
         """
         Initializes attributes for class. 
         """
         self.name = name
         self.description = description
+
+class Ally(Character):
+    def __init__(self, name, description):
+        """
+        Initializes attributes for class. 
+        """
+        super().__init__(name, description)
+
+class Enemy(Character):
+    """class for an enemy"""
+    defeats = 0
+    def __init__(self, name, description):
+        """
+        Initializes attributes for class. 
+        """
+        super().__init__(name, description)
         self.conversation = ''
         self.weakness = ''
     
